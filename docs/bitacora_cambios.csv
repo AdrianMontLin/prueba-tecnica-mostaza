@@ -1,0 +1,3 @@
+Fecha,Sitio,Qué se hizo,Quién,Respaldo previo (sí/no y dónde),Resultado,Evidencia
+2026-10-20,Cliente Demo A,Actualización del tema en entorno de pruebas,Samuel,Sí; copia en nube 2026-10-20,Correcto,Captura de portada y formulario
+2026-10-20,Cliente Demo B,Retiro de 2 plugins sin uso,Samuel,Sí; respaldo del hosting,Correcto,Lista de plugins antes y después

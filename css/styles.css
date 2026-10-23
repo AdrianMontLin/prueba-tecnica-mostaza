@@ -1,0 +1,190 @@
+/* ---------- Variables ---------- */
+:root {
+  --mostaza: #E3A72F;
+  --azul: #1B2A49;
+  --azul-hover: #2C416F;
+  --fondo: #F3F4F6;
+  --blanco: #FFFFFF;
+  --suave: #5A6478;
+  --linea: #D5D9E0;
+  --error: #B3261E;
+  --ok-fondo: #E6F2EC;
+  --ok-texto: #14472F;
+  --error-fondo: #FBE9E7;
+  --error-texto: #7A1B14;
+  --info-fondo: #E8EBF2;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: var(--azul);
+  line-height: 1.5;
+}
+
+.contenedor {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Encabezado: el único momento "fuerte" de la página ---------- */
+.encabezado {
+  background: var(--mostaza);
+  padding: clamp(2rem, 6vw, 4rem) 0;
+}
+
+h1, h2, h3 {
+  font-family: Rockwell, "Roboto Slab", Georgia, serif;
+  line-height: 1.15;
+}
+
+.encabezado h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2.4rem, 8vw, 4.5rem);
+  line-height: 1;
+}
+
+.encabezado p {
+  margin: 0;
+  max-width: 36rem;
+  font-size: 1.1rem;
+}
+
+/* ---------- Tablero ---------- */
+.tablero {
+  display: grid;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 56rem) {
+  .tablero {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+.panel {
+  background: var(--blanco);
+  padding: 1.5rem;
+  border-top: 4px solid var(--azul);
+}
+
+.panel h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.5rem;
+}
+
+.contador { color: var(--suave); font-weight: 400; }
+
+/* ---------- Formulario ---------- */
+.campo { margin-bottom: 1rem; }
+
+.fila {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.7rem 0.75rem;
+  font: inherit;          /* 16px: evita el zoom automático en iPhone */
+  color: var(--azul);
+  background: var(--blanco);
+  border: 1.5px solid var(--linea);
+  border-radius: 6px;
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 2px;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"] { border-color: var(--error); }
+
+.error {
+  display: block;
+  min-height: 1.25rem;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--error);
+}
+
+.boton-principal {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--blanco);
+  background: var(--azul);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.boton-principal:hover { background: var(--azul-hover); }
+
+/* ---------- Mensajes ---------- */
+.mensaje {
+  margin: 1.25rem 0 0;
+  padding: 0.85rem 1rem;
+  border-left: 5px solid currentColor;
+}
+.mensaje.ok    { background: var(--ok-fondo);    color: var(--ok-texto); }
+.mensaje.error { background: var(--error-fondo); color: var(--error-texto); }
+.mensaje.info  { background: var(--info-fondo);  color: var(--azul); }
+
+/* ---------- Listado ---------- */
+.vacio { color: var(--suave); margin: 0; }
+
+.lista { list-style: none; margin: 0; padding: 0; }
+
+.reserva {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--linea);
+}
+.reserva:first-child { padding-top: 0; }
+.reserva:last-child  { border-bottom: 0; padding-bottom: 0; }
+
+.reserva h3 { margin: 0 0 0.15rem; font-size: 1.1rem; }
+.reserva p  { margin: 0; overflow-wrap: anywhere; }
+.reserva .cuando { font-weight: 600; }
+.reserva .quien  { color: var(--suave); font-size: 0.95rem; }
+
+.boton-cancelar {
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--error);
+  background: transparent;
+  border: 1.5px solid var(--error);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.boton-cancelar:hover { background: var(--error-fondo); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

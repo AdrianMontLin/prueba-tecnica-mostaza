@@ -1,0 +1,5 @@
+Cliente,Proyecto,URL,Plataforma,Hosting,Dominio,Renovación hosting,Renovación dominio,Licencias,Plugins relevantes,Respaldos,Estado,Pendientes,Riesgos,Accesos (referencia),Responsable,Última revisión
+
+Cliente Demo A,Sitio institucional,https://demo-a.example,WordPress 6.x,Proveedor X plan básico,Registrador Y,2027-03-15,2027-06-01,Tema Pro vence 2027-01-10,"Caché; SEO; formularios",Hosting + nube; semanal; último 2026-10-18,Verde,Actualizar tema,PHP antiguo,Gestor de contraseñas > Clientes/Demo A,Samuel,2026-10-20
+Cliente Demo B,Tienda en línea,https://demo-b.example,WooCommerce,Proveedor Z plan medio,Registrador Y,2026-12-01,2027-02-20,Pasarela de pago,"Pagos; envíos; seguridad",Hosting; diario; último 2026-10-20,Amarillo,Renovar hosting; probar pagos,Hosting vence pronto,Gestor de contraseñas > Clientes/Demo B,Samuel,2026-10-20
+Cliente Demo C,Landing de campaña,https://demo-c.example,HTML estático,Proveedor X plan básico,Registrador W,2027-05-10,2027-05-10,Ninguna,Ninguno,Repositorio Git; por cambio; último 2026-09-30,Verde,Ninguno,Sin respaldo automático,Gestor de contraseñas > Clientes/Demo C,Samuel,2026-10-05

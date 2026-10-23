@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reserva de citas | Mostaza</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="contenedor">
+      <h1>Reserva tu cita</h1>
+      <p>Elige un servicio, una fecha y una hora. Tus reservas quedan guardadas en este navegador.</p>
+    </div>
+  </header>
+
+  <main class="contenedor tablero">
+    <section class="panel" aria-labelledby="titulo-form">
+      <h2 id="titulo-form">Nueva reserva</h2>
+
+      <form id="form-reserva" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name"
+                 aria-describedby="error-nombre" maxlength="80" required>
+          <span class="error" id="error-nombre"></span>
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input id="correo" name="correo" type="email" autocomplete="email"
+                 aria-describedby="error-correo" maxlength="120" required>
+          <span class="error" id="error-correo"></span>
+        </div>
+
+        <div class="campo">
+          <label for="servicio">Servicio</label>
+          <select id="servicio" name="servicio" aria-describedby="error-servicio" required>
+            <option value="">Selecciona un servicio</option>
+          </select>
+          <span class="error" id="error-servicio"></span>
+        </div>
+
+        <div class="fila">
+          <div class="campo">
+            <label for="fecha">Fecha</label>
+            <input id="fecha" name="fecha" type="date" aria-describedby="error-fecha" required>
+            <span class="error" id="error-fecha"></span>
+          </div>
+          <div class="campo">
+            <label for="hora">Hora</label>
+            <input id="hora" name="hora" type="time" step="900" aria-describedby="error-hora" required>
+            <span class="error" id="error-hora"></span>
+          </div>
+        </div>
+
+        <button type="submit" class="boton-principal">Confirmar reserva</button>
+      </form>
+
+      <p id="mensaje" class="mensaje" role="status" aria-live="polite" hidden></p>
+    </section>
+
+    <section class="panel" aria-labelledby="titulo-lista">
+      <h2 id="titulo-lista">Reservas realizadas <span id="contador" class="contador"></span></h2>
+      <p id="vacio" class="vacio">Todavía no hay reservas. Completa el formulario para crear la primera.</p>
+      <ul id="lista" class="lista"></ul>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
